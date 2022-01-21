@@ -198,12 +198,15 @@ const AppProcess = (() => {
             { 'urls': 'stun:stun.l.google.com:19302' },
             { 'urls': 'stun:stun1.l.google.com:19302' },
             {
-                "urls": [
-                "turn:13.250.13.83:3478?transport=udp"
-                ],
-                "username": "YzYNCouZM1mhqhmseWk6",
-                "credential": "YzYNCouZM1mhqhmseWk6"
-                }
+                url: 'turn:relay.backups.cz',
+                credential: 'webrtc',
+                username: 'webrtc'
+            },
+            {
+                url: 'turn:relay.backups.cz?transport=tcp',
+                credential: 'webrtc',
+                username: 'webrtc'
+            },
         ]
     }
 
