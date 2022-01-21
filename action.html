@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="public/assets/css/style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="public/assets/js/jquery-3.4.1.min.js"></script>
+
+    <title>Google Meet Clone</title>
+  </head>
+  <body>
+    <div class="main container-fluid d-flex flex-column home-wrap">
+      <div class="g-top text-light">
+        <div class="top-remote-video-show-wrap d-flex">
+          <div id="meetingContainer" style="display: none" class="w-75">
+            <div class="call-wrap" style="background-color: black">
+              <div
+                class="video-wrap"
+                id="divUsers"
+                style="display: flex; flex-wrap:wrap;"
+              >
+                <div id="me" class="userbox display-center flex-column">
+                  <h2 class="display-center"></h2>
+                  <div class="display-center">
+                    <video autoplay muted id="localVideoPlayer"></video>
+                  </div>
+                </div>
+
+                <div
+                  id="otherTemplate"
+                  style="display: none"
+                  class="userbox display-center flex-column"
+                >
+                  <h2 class="display-center"></h2>
+                  <div class="display-center">
+                    <video autoplay muted></video>
+                    <audio
+                      autoplay
+            
+                      controls
+                      style="display: none"
+                    ></audio>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="
+            g-top-left
+            bg-light
+            text-secondary
+            d-flex
+            w-25
+            align-items-center
+            justify-content-between
+            px-2
+          "
+        >
+          <div class="top-left-participant-wrap pt-2 cursor-pointer">
+         <i class="fas-fa-users"></i>
+            <div class="top-left-participant-count">2</div>
+          </div>
+          <div class="top-left-chat-wrap pt-2 cursor-pointer">
+            <i class="fas fa-comment-dots"></i>
+          </div>
+          <div class="top-left-time-wrap"></div>
+        </div>
+      </div>
+      <div
+        class="
+          g-bottom
+          bg-light
+          m-0
+          d-flex
+          justify-content-between
+          align-items-center
+        "
+      >
+        <div class="bottom-left d-flex" style="height: 10vh">
+          <div class="display-center cursor-pointer meeting-details-button">
+            Meeting Details <i class="fas fa-angle-down"></i>
+          </div>
+        </div>
+        <div
+          class="bottom-middle d-flex justify-content-center align-items-center"
+          style="height: 10vh"
+        >
+          <div
+            id="micMuteUnmute"
+            class="mic-toggle-wrap action-icon-style display-center mr-2"
+            style="width: 100%;"
+            >
+           <i class="fas fa-microphone-alt"></i>
+          </div>
+          <div class="end-call-wrap action-icon-style display-center mr-2">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div
+            class="
+              video-toggle-wrap
+              cursor-pointer
+              action-icon-style
+              display-center
+              mr-2
+            "
+           id="videoCamOnOff" style="width: 100%;">
+           <i class="fas fa-video"></i>
+          </div>
+        </div>
+        <div
+          class="
+            bottom-right
+            d-flex
+            justify-content-center
+            align-items-center
+            mr-3
+          "
+          style="height: 10vh"
+        >
+          <div id="screenShare"
+            class="
+              present-now-wrap
+              d-flex
+              justify-content-center
+              flex-column
+              align-items-center
+              mr-4
+              cursor-pointer
+            "
+          >
+            <!-- <span> icon</span> -->
+            <div><i class="fas fa-compact-disc"></i> </div>
+          </div>
+          <div
+            style="height: 10vh; position: relative"
+            class="option-wrap cursor-pointer display-center"
+          >
+            <div class="option-icon">
+              <i class="fas fa-elipsis-v"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- define app before main (a function is called from main) -->
+    <!-- add type module in both js file -->
+    <script src="public/assets/js/app2.js" type='module'></script>
+    <script src="public/assets/js/main.js" type="module"> </script>
+
+  </body>
+</html>
