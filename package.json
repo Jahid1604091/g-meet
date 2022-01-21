@@ -5,7 +5,8 @@
     "socket.io": "^4.4.0"
   },
   "scripts": {
-    "start": "nodemon --max-old-space-size=8192 server.js"
+    "start": "node --max-old-space-size=8192 server.js",
+    "dev": "nodemon --max-old-space-size=8192 server.js"
   },
   "name": "google_meet",
   "version": "1.0.0",
