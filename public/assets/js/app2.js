@@ -194,16 +194,17 @@ const AppProcess = (() => {
 
     let iceConig = {
         //2 stun servers (provides users info from pc network, ip )
-        "iceServers": [
+        iceServers: [
+            { 'urls': 'stun:stun.l.google.com:19302' },
+            { 'urls': 'stun:stun1.l.google.com:19302' },
             {
-              "urls": "stun:vc.example.com:3478"
-            },
-            {
-              "urls": "turn:vc.example.com:3478",
-              "username": "coturnUser",
-              "credential": "coturnUserPassword"
-            }
-          ],
+                "urls": [
+                "turn:13.250.13.83:3478?transport=udp"
+                ],
+                "username": "YzYNCouZM1mhqhmseWk6",
+                "credential": "YzYNCouZM1mhqhmseWk6"
+                }
+        ]
     }
 
     const setConnection = async (connId) => {
