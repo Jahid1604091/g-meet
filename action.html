@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="#" />
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- fontawesome -->
     <link
       rel="stylesheet"
@@ -27,10 +22,11 @@
     <title>Google Meet Clone</title>
   </head>
   <body>
-    <div class="main container-fluid d-flex flex-column home-wrap">
+    <main class="main container-fluid d-flex flex-column home-wrap">
       <div class="g-top text-light">
         <div class="top-remote-video-show-wrap d-flex">
-          <div id="meetingContainer" style="display: none" class="w-75">
+
+          <div id="meetingContainer" style="display: none" >
             <div class="call-wrap" style="background-color: black">
               <div
                 class="video-wrap"
@@ -38,7 +34,7 @@
                 style="display: flex; flex-wrap:wrap;"
               >
                 <div id="me" class="userbox display-center flex-column">
-                  <h2 class="display-center"></h2>
+                  <h2 class="display-center username"></h2>
                   <div class="display-center">
                     <video autoplay muted id="localVideoPlayer"></video>
                   </div>
@@ -49,12 +45,11 @@
                   style="display: none"
                   class="userbox display-center flex-column"
                 >
-                  <h2 class="display-center"></h2>
+                  <h2 class="display-center username"></h2>
                   <div class="display-center">
                     <video autoplay muted></video>
                     <audio
                       autoplay
-            
                       controls
                       style="display: none"
                     ></audio>
@@ -63,8 +58,15 @@
               </div>
             </div>
           </div>
+
+          <!-- message -->
+          <!-- <div class="g-right-details-wrap bg-light text-secondary h-100" 
+          style="display: block;flex-basis: 25%; z-index: 1;">
+
+          </div> -->
         </div>
-        <div
+
+        <!-- <div
           class="
             g-top-left
             bg-light
@@ -84,7 +86,9 @@
             <i class="fas fa-comment-dots"></i>
           </div>
           <div class="top-left-time-wrap"></div>
-        </div>
+        </div> -->
+
+
       </div>
       <div
         class="
@@ -102,17 +106,17 @@
           </div>
         </div>
         <div
-          class="bottom-middle d-flex justify-content-center align-items-center"
-          style="height: 10vh"
+          class="bottom-middle d-flex justify-content-between mt-2"
+          style="height: 10vh;"
         >
           <div
             id="micMuteUnmute"
-            class="mic-toggle-wrap action-icon-style display-center mr-2"
+            class="mic-toggle-wrap action-icon-style display-center mr-2  cursor-pointer"
             style="width: 100%;"
             >
-           <i class="fas fa-microphone-alt"></i>
+           <i class="fas fa-microphone-alt-slash"></i>
           </div>
-          <div class="end-call-wrap action-icon-style display-center mr-2">
+          <div class="end-call-wrap action-icon-style display-center mr-2  cursor-pointer">
             <i class="fas fa-phone"></i>
           </div>
           <div
@@ -124,7 +128,7 @@
               mr-2
             "
            id="videoCamOnOff" style="width: 100%;">
-           <i class="fas fa-video"></i>
+           <i class="fas fa-video-slash"></i>
           </div>
         </div>
         <div
@@ -149,7 +153,7 @@
             "
           >
             <!-- <span> icon</span> -->
-            <div><i class="fas fa-compact-disc"></i> </div>
+            <div> <i class="fas fa-compact-disc"></i> Present Now  </div>
           </div>
           <div
             style="height: 10vh; position: relative"
@@ -161,8 +165,10 @@
           </div>
         </div>
       </div>
-    </div>
-
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- define app before main (a function is called from main) -->
     <!-- add type module in both js file -->
     <script src="public/assets/js/app2.js" type='module'></script>

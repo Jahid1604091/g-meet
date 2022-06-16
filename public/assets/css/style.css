@@ -45,17 +45,28 @@ footer{
 }
 
 .g-top{
-    height: 89vh;
+    height: 85vh;
     position: relative;
+    overflow-y: auto;
+    margin: 10px 0;
+    
 }
 
 .video-wrap{
-    height: 600px;
+   position: relative;
+    height: 450px;
 }
 
 .video-wrap > *{
-    flex: 1 1 250px;
-    border: 1px solid wheat;
+    /* flex: 1 1 250px; */
+    /* border: 1px solid wheat; */
+}
+
+.username{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    font-size: 16px;
 }
 
 .g-top-left{
@@ -79,7 +90,7 @@ footer{
 }
 
 .g-bottom{
-    /* margin: 0 -10px !important; */
+    margin: 0 -10px !important;
     padding: 0 20px;
     box-shadow: 0 0 5px black;
     z-index: 2;
@@ -91,17 +102,23 @@ footer{
 }
 
 .action-icon-style{
-    height: 40px;
-    width: 40px;
-    border-radius: 1px solid lightgray;
+    height: 35px;
+    width: 35px;
+    border: 1px solid lightgray;
     border-radius: 50%;
-    /* font-size: 8px !important; */
+    font-size: 8px !important;
+    text-align: center;
 }
 
-.end-call-wrap{
+.action-icon-style i{
+   
+    font-size: 18px;
+}
+
+/* .end-call-wrap{
     -ms-transform: rotate(135deg);
     transform: rotate(135deg);
-}
+} */
 
 
 
@@ -109,9 +126,13 @@ footer{
     justify-content: center;
     align-items: center;
     height: 100%;
+    
 }
 
 video{
+    margin:5px 10px;
     border: 1px solid gray;
     width: 300px;
+    height: 200px;
+    
 }

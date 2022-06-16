@@ -35,12 +35,12 @@ const AppProcess = (() => {
             }
             if (isAudioMute) {
                 audio.enabled = true
-                mic.innerHTML = 'mic on'
+                mic.innerHTML = '<i class="fas fa-microphone-alt"></i>'
                 updateMediaSenders(audio, rtp_aud_senders)
             }
             else {
                 audio.enabled = false
-                mic.innerHTML = 'mic off'
+                mic.innerHTML = '<i class="fas fa-microphone-alt-slash"></i>'
                 removeMediaSenders(rtp_aud_senders)
             }
             isAudioMute = !isAudioMute
@@ -142,7 +142,7 @@ const AppProcess = (() => {
 
     const videoProcess = async (newVideoState) => {
         if(newVideoState == video_states.None){
-            $('#videoCamOnOff').html("<span style='width:100%'>cam off</span>")
+            $('#videoCamOnOff').html("<span style='width:100%'> <i class='fas fa-video-slash'></i></span>")
         }
 
         video_st = newVideoState
@@ -150,7 +150,7 @@ const AppProcess = (() => {
         
 
         if(newVideoState == video_states.Camera){
-            $('#videoCamOnOff').html("<span style='width:100%'>cam on</span>")
+            $('#videoCamOnOff').html("<span style='width:100%'><i class='fas fa-video'></i></span>")
         }
         try {
             let vStream = null
@@ -340,21 +340,21 @@ const AppProcess = (() => {
 //all SIGNALING tasks
 export const MyApp = (() => {
     let socket = null
-    let user_id = ''
+    let user_id = '' //username actually
     let meeting_id = ''
 
     const init = (uid, mid) => {
         user_id = uid
         meeting_id = mid
         $("#meetingContainer").show()
-        $("#me h2").text(user_id + '(ME')
+        $("#me h2").text(user_id + '(ME)')
         document.title = user_id
         event_process_for_signaling_server()
     }
 
     const event_process_for_signaling_server = () => {
         socket = io.connect()
-
+        
         let SDP_function = (data, to_connid) => {
             socket.emit('SDPProcess', {
                 message: data,
